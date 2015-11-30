@@ -1,5 +1,4 @@
 //SHORT SYNTAX
-error 'fail on purpose to test GitHub protected builds'
 stage 'build'
  //build stuff
  sleep 10
