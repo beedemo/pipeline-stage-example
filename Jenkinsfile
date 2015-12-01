@@ -11,4 +11,4 @@ stage name: 'test', concurrency: 3
 stage name: 'deploy', concurrency: 1
   //deploy stuff one at a time
   sleep 10
-  echo 'new update'
+  echo 'new update 2'
