@@ -1,3 +1,4 @@
+error 'test GitHub protected branch'
 //log what branch is being built
 echo "${env.BRANCH_NAME}"
 //SHORT SYNTAX
