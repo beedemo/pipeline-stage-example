@@ -3,7 +3,7 @@ echo "${env.BRANCH_NAME}"
 //SHORT SYNTAX
 node('dod') {
   stage 'checkout'
-    checkout scm
+    //checkout scm
   stage 'build'
     //build stuff
     sleep 5
