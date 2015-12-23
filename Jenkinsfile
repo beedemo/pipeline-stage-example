@@ -14,8 +14,9 @@ node('dod') {
     //test stuff concurrently, max 3 builds testing
     sleep 5
 }
+//only deploy if on master branch
 if(env.BRANCH_NAME=="master"){
-node('dod') {
+  node('dod') {
    stage name: 'deploy', concurrency: 1
      //deploy stuff one at a time
      sleep 5
