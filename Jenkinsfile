@@ -1,5 +1,8 @@
 //log what branch is being built
 echo "${env.BRANCH_NAME}"
+
+//discard builds, keep 5
+properties ([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', numToKeepStr: '5']]])
 //SHORT SYNTAX
 node('dod') {
   stage 'checkout'
