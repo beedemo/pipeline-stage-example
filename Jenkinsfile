@@ -1,3 +1,4 @@
+properties([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5']]])
 //log what branch is being built
 echo "${env.BRANCH_NAME}"
 //SHORT SYNTAX
