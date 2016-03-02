@@ -3,7 +3,6 @@ echo "${env.BRANCH_NAME}"
 //SHORT SYNTAX
 stage 'build'
  //build stuff
- error 'this Jenkinsfile is broken'
  sleep 5
 
 //LONG SYNTAX
