@@ -3,7 +3,8 @@ echo "${env.BRANCH_NAME}"
 //SHORT SYNTAX
 stage 'build'
  //build stuff
- sleep 5
+ echo 'fixed'
+ sleep 6
 
 //LONG SYNTAX
 stage name: 'test', concurrency: 3
