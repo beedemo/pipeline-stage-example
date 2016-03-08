@@ -2,7 +2,7 @@
 echo "${env.BRANCH_NAME}"
 
 //discard builds, keep 5
-properties ([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', numToKeepStr: '5']]])
+properties ([[$class: 'org.jenkinsci.plugins.workflow.job.properties.BuildDiscarderProperty', strategy: [$class: 'LogRotator', numToKeepStr: '5']]])
 //SHORT SYNTAX
 node('docker-cloud') {
   stage 'checkout'
