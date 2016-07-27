@@ -1,8 +1,8 @@
 //log what branch is being built
 echo "${env.BRANCH_NAME}"
 
-//discard builds, keep 5
-properties [[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '7']]]
+//discard builds, keep 7
+properties([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '5']]])
 //SHORT SYNTAX
 node('docker-cloud') {
   stage 'checkout'
