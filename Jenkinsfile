@@ -2,6 +2,7 @@
 echo "${env.BRANCH_NAME}"
 //SHORT SYNTAX
 stage 'build'
+ helloWorld('Bob')
  //build stuff
  echo 'fixed'
  sleep 6
