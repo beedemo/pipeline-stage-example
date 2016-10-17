@@ -1,5 +1,6 @@
 //log what branch is being built
 echo "${env.BRANCH_NAME}"
+echo 'feature two'
 //SHORT SYNTAX
 stage('build') {
  helloWorld('Bob')
