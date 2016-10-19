@@ -5,7 +5,6 @@ stage('build') {
  helloWorld('Bob')
  //build stuff
  echo 'fixed'
- sleep 6
 }
 
 milestone 1
@@ -23,13 +22,12 @@ stage('test') {
 }
 if(env.BRANCH_NAME=="master"){
  //abort an previous run if it hasn't reached this point
- milestone 3
  stage('deploy') {
    timeout(1) {
      input message: 'Do you want to deploy to production?', ok: 'Yes', submitter: 'cloudbees_admins'
    }
    //deploy stuff one at a time
-   sleep 5
+   milestone 3
    echo 'Deployed'
    node('docker-cloud') {
      checkout scm
