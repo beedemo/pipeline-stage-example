@@ -12,7 +12,9 @@ milestone 1
 stage('test') {
   //lock the selenium agents
   lock(inversePrecedence: true, resource: 'selenium-firefox') {
-    input message: 'Do you want to execute the Selenium tests?', ok: 'Yes', submitter: 'cloudbees_admins'
+    timeout(1) {
+      input message: 'Do you want to execute the Selenium tests?', ok: 'Yes', submitter: 'cloudbees_admins'
+    }
     milestone 2
     node('selenium-firefox') {
       sh 'java -version'    
@@ -23,7 +25,9 @@ if(env.BRANCH_NAME=="master"){
  //abort an previous run if it hasn't reached this point
  milestone 3
  stage('deploy') {
-   input message: 'Do you want to deploy to production?', ok: 'Yes', submitter: 'cloudbees_admins'
+   timeout(1) {
+     input message: 'Do you want to deploy to production?', ok: 'Yes', submitter: 'cloudbees_admins'
+   }
    //deploy stuff one at a time
    sleep 5
    echo 'Deployed'
