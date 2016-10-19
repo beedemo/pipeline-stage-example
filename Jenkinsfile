@@ -15,7 +15,7 @@ stage('test') {
     input message: 'Do you want to execute the Selenium tests?', ok: 'Yes', submitter: 'cloudbees_admins'
     milestone 2
     node('selenium-firefox') {
-      sh 'java -v'    
+      sh 'java -version'    
     }
   }
 }
