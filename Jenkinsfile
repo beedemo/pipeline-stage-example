@@ -14,7 +14,7 @@ stage('test') {
   lock(inversePrecedence: true, resource: 'selenium-firefox') {
     input message: 'Do you want to execute the Selenium tests?', ok: 'Yes', submitter: 'cloudbees_admins'
     milestone 2
-    node('selenium-firefox) {
+    node('selenium-firefox') {
       sh 'java -v'    
     }
   }
