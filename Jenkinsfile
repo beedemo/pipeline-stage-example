@@ -20,6 +20,8 @@ stage('test') {
     }
   }
 }
+
+checkpoint 'tests complete'
 if(env.BRANCH_NAME=="master"){
  //abort an previous run if it hasn't reached this point
  stage('deploy') {
