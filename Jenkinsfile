@@ -2,7 +2,7 @@
 echo "${env.BRANCH_NAME}"
 //SHORT SYNTAX
 stage('build') {
- helloWorld('Bob')
+ helloWorld('Guinness')
  //build stuff
  echo 'fixed'
 }
