@@ -2,13 +2,14 @@
 echo "${env.BRANCH_NAME}"
 //SHORT SYNTAX
 stage('build') {
- helloWorld('Bob')
+ helloWorld('Guinness')
  //build stuff
  echo 'fixed'
 }
 
 milestone 1
 stage('test') {
+  checkpoint 'finished build'
   //lock the selenium agents
   lock(inversePrecedence: true, resource: 'selenium-firefox') {
     timeout(1) {
@@ -21,10 +22,10 @@ stage('test') {
   }
 }
 
-checkpoint 'tests complete'
 if(env.BRANCH_NAME=="master"){
  //abort an previous run if it hasn't reached this point
  stage('deploy') {
+   checkpoint 'tests complete'
    timeout(1) {
      input message: 'Do you want to deploy to production?', ok: 'Yes', submitter: 'cloudbees_admins'
    }
